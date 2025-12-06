@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Ride_App
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/rideshare
+
+server:
+  port: 8081
+
+jwt:
+  secret: your_super_secret_key_here
+  expiration: 3600000
