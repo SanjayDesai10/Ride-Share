@@ -4,11 +4,12 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/rideshare
+      database: rideshare
+      uri: mongodb://localhost:27017
 
 server:
   port: 8081
 
 jwt:
-  secret: your_super_secret_key_here
+  secret: jwtsecretkeyjwtsecretkeyjwtsecret123
   expiration: 3600000

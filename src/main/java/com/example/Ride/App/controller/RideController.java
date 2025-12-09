@@ -38,8 +38,9 @@ public class RideController {
 
     @PostMapping("/rides/{rideId}/complete")
     public ResponseEntity<Ride> completeRide(@PathVariable String rideId, Principal principal) {
-        User caller = userRepository.findByUsername(principal.getName()).orElseThrow();
-        Ride ride = rideService.completeRide(rideId, caller.getId());
+        String callerUsername = principal.getName();  // JWT subject = username
+        Ride ride = rideService.completeRide(rideId, callerUsername);
         return ResponseEntity.ok(ride);
     }
+
 }
